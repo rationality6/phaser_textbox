@@ -1,6 +1,8 @@
 import Phaser from "phaser";
-import Particles from "./particles";
-import Textbox from "./textbox";
+
+const COLOR_PRIMARY = 0x4e342e;
+const COLOR_LIGHT = 0x7b5e57;
+const COLOR_DARK = 0x260e04;
 
 const content1 = `
   더 이상 윤석열 정부, 국민의힘과 경쟁하지 않겠다.
@@ -139,7 +141,7 @@ function textBoxRun({ self, name, content }) {
       )
       .on("complete", function () {
         console.log("all pages typing complete");
-        resolve()
+        resolve();
       });
     //.on('type', function () {
     //})
@@ -162,7 +164,7 @@ class Demo extends Phaser.Scene {
       sceneKey: "rexUI",
     });
 
-    this.load.image("moon","assets/moon.jpg");
+    this.load.image("moon", "assets/moon.jpg");
 
     this.load.image(
       "nextPage",
@@ -175,11 +177,11 @@ class Demo extends Phaser.Scene {
     moon.displayWidth = 900;
     moon.displayHeight = 500;
 
-    const b = await textBoxRun({
-      self: this,
-      name: "이재명",
-      content: content1,
-    });
+    // const b = await textBoxRun({
+    //   self: this,
+    //   name: "이재명",
+    //   content: content1,
+    // });
     const c = await textBoxRun({
       self: this,
       name: "문재인",
