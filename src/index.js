@@ -1,10 +1,6 @@
 import Phaser from "phaser";
 import Particles from "./particles";
-
-
-const COLOR_PRIMARY = 0x4e342e;
-const COLOR_LIGHT = 0x7b5e57;
-const COLOR_DARK = 0x260e04;
+import Textbox from "./textbox";
 
 const content1 = `
   더 이상 윤석열 정부, 국민의힘과 경쟁하지 않겠다.
