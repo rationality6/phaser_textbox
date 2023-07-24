@@ -164,7 +164,7 @@ class Demo extends Phaser.Scene {
       sceneKey: "rexUI",
     });
 
-    this.load.image("moon", "assets/moon.jpg");
+    this.load.image("moon", "https://cloudbucket22.s3.ap-northeast-2.amazonaws.com/moon.jpg");
 
     this.load.image(
       "nextPage",
