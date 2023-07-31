@@ -33,6 +33,13 @@ const content2 = `
   결과는 정의로울 것입니다.
 
 
+  분노는 정의의 출발이며,
+  
+
+  불의에 대한 뜨거운 분노가 있어야
+
+
+  정의를 바로 세울 수 있습니다.
 
 `;
 
@@ -100,13 +107,13 @@ function textBoxRun({ self, name, content }) {
       })
       .layout();
 
-    var scene = self;
+    let scene = self;
     textBox
       .setInteractive()
       .on(
         "pointerdown",
         function () {
-          var icon = this.getElement("action").setVisible(false);
+          let icon = this.getElement("action").setVisible(false);
           this.resetChildVisibleState(icon);
           if (self.isTyping) {
             this.stop(true);
@@ -121,14 +128,11 @@ function textBoxRun({ self, name, content }) {
       .on(
         "pageend",
         function () {
-          if (self.isLastPage) {
-            return;
-          }
-
-          var icon = this.getElement("action").setVisible(true);
+          if (self.isLastPage) return;
+          let icon = this.getElement("action").setVisible(true);
           this.resetChildVisibleState(icon);
           icon.y -= 30;
-          var tween = scene.tweens.add({
+          let tween = scene.tweens.add({
             targets: icon,
             y: "+=30", // '+=100'
             ease: "Bounce", // 'Cubic', 'Elastic', 'Bounce', 'Back'
@@ -164,7 +168,10 @@ class Demo extends Phaser.Scene {
       sceneKey: "rexUI",
     });
 
-    this.load.image("moon", "https://cloudbucket22.s3.ap-northeast-2.amazonaws.com/moon.jpg");
+    this.load.image(
+      "moon",
+      "https://cloudbucket22.s3.ap-northeast-2.amazonaws.com/moon.jpg"
+    );
 
     this.load.image(
       "nextPage",
@@ -182,6 +189,7 @@ class Demo extends Phaser.Scene {
     //   name: "이재명",
     //   content: content1,
     // });
+
     const c = await textBoxRun({
       self: this,
       name: "문재인",
